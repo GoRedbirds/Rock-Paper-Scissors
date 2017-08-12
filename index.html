@@ -23,12 +23,14 @@
         var losses = 0;
         var ties = 0;
         var noAward = true;
+        var title = 'Title: Rookie';
         
         var play = function(choice) {
             var banner = document.getElementById('banner');
             var winsHTML = document.getElementById('wins');
             var lossesHTML = document.getElementById('losses');
             var tiesHTML = document.getElementById('ties');
+            var titleHTML = document.getElementById('title');
             
             var choiceList = ['rock','paper','scissors'];
             var AIchoice = choiceList[Math.floor(Math.random()*3)];
@@ -73,21 +75,26 @@
                 alert('You have won five times. You have the title of "Ninja"');
                 noAward = false;
                 banner.innerHTML = "<img src='http://www.gifimagesdownload.com/wp-content/uploads/2016/03/Ninja-gif-black.gif'>";
+                title = 'Title: Ninja';
             } else if (wins === 10 && noAward) {
                 alert('You have won ten times. You have the title of "Race Car Driver"');
                 noAward = false;
-                banner.innerHTML = "<img src='http://33.media.tumblr.com/ec39d3975517fdbcad9bf289d035fbbd/tumblr_n843inIVBW1tfir0mo1_r1_500.gif'>";
+                banner.innerHTML = "<img src='http://www.netanimations.net/auto_animation_5%20(1).gif'>";
+                title = 'Title: Race Car Driver';
             } else if (wins === 25 && noAward) {
                 alert('You have won twenty-five times. You have the title of "Astronaut"');
                 noAward = false;
                 banner.innerHTML = "<img src='http://bestanimations.com/Earth&Space/astronaut-animation-10.gif'>";
+                title = 'Title: Astronaut';
             } else if (wins === 50 && noAward) {
                 alert('You have fifty wins. You have earned your final trophy, the "Champion!"');
                 noAward = false;
                 banner.innerHTML = "<img src='http://rs18.pbsrc.com/albums/b114/sztaylor50/Awards/1121099519-14.gif~c200'>";
+                title = 'Title: Champion!';
             } else if ((! noAward) && wins != 5 && wins != 10 && wins != 25 && wins != 50) {
                 noAward = true;
             }
+            titleHTML.innerHTML = title
         }
 	</script>
 </head>
@@ -102,5 +109,6 @@
     <p id='wins'>Wins: 0</p>
     <p id='losses'>Losses: 0</p>
     <p id='ties'>Ties: 0</p>
+    <p id='title'>Title: Rookie</p>
 </body>
 </html>
